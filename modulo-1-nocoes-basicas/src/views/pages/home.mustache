@@ -1,0 +1,41 @@
+{{>partials/header}}
+Opa, olá {{ firstName }} {{ lastName }} tudo bem?
+
+{{#showOld}}
+<p>é ai tudo beleza?</p>
+{{/showOld}}
+
+<hr />
+
+<h2>Produtos Todos</h2>
+<ul>
+   {{#products}}
+      {{>partials/productitem}}
+   {{/products}}
+</ul>
+
+<hr />
+
+<h2>Produtos Apartir de R$ 12</h2>
+<ul>
+   {{#productsFrom}}
+      {{>partials/productitem}}
+   {{/productsFrom}}
+</ul>
+
+<hr />
+<h2>Frase do dia</h2>
+<ul>
+   {{#frases}}
+   <li>{{.}}</li>
+   {{/frases}}
+</ul>
+<hr />
+<h3>Quando não houver nenhum resultado encontrado</h3>
+<ul>
+   {{^resultados}}
+   <li>Nenhum resultado foi encontrado!</li>
+   {{/resultados}}
+</ul>
+
+{{>partials/footer}}
