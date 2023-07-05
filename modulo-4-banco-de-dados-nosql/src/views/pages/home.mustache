@@ -66,10 +66,9 @@
                      <div class="row">
                         <div class="form-group mb-2 col-4">
                            <label>Por: </label>
-                           <select class="form-control" name="nPor">
+                           <select class="form-control" name="nType">
                               <option value="">Todos</option>
-                              <option value="name_like">Nomes</option>
-                              <option value="name_equal">Nome Igual</option>
+                              <option value="name_equal">Nome</option>
                               <option value="id">ID</option>
                               <option value="age_equal">Idade Igual</option>
                               <option value="age_up">Idade Maior</option>
@@ -84,7 +83,7 @@
                         </div>
                         <div class="form-group mb-2 col-8">
                            <label>Campo: </label>
-                           <input type="text" class="form-control" />
+                           <input type="text" class="form-control" name="nValue"/>
                         </div>
                         <div class="form-group mb-2 col-4">
                            <button class="btn btn-warning">Buscar</button>
@@ -134,9 +133,6 @@
                         </tr>
                         {{/listUsers}}
                      </table>
-                     <div class="alert alert-danger m-2" role="alert">
-                        Nenhum resultado encontrado!
-                     </div>
                   </div>
                </article>
             </section>

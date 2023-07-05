@@ -1,0 +1,54 @@
+[{
+  "_id": {
+    "$oid": "64a5b48cc6e611f57eed6703"
+  },
+  "email": "joabtorres1508@gmail.com",
+  "age": 123,
+  "interesses": [
+    "Caminhar",
+    " estudar",
+    " correr",
+    " dormir"
+  ],
+  "name": {
+    "firstName": "Carlos ",
+    "lastName": "Carlos "
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "64a5b65654586f1c478bb821"
+  },
+  "email": "semma@castanhal.pa.gov.br",
+  "age": 18,
+  "interesses": [
+    "Caminhar",
+    "  estudar",
+    "  correr",
+    "  dormir"
+  ],
+  "name": {
+    "firstName": "Rodrigo",
+    "lastName": "Rodrigo"
+  },
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "64a5b8542e323c6c71099824"
+  },
+  "email": "joabtorres1508@gmail.com",
+  "age": 30,
+  "interesses": [
+    "Caminhar",
+    "   estudar",
+    "   correr",
+    "   dormir"
+  ],
+  "name": {
+    "firstName": "Joab",
+    "lastName": "Torres Alencar"
+  },
+  "__v": 3
+}]

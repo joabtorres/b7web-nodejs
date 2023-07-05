@@ -7,7 +7,7 @@ export const insert = async (req: Request, res: Response) => {
       email: req.body.email as string,
       name: {
          firstName: req.body.firstName as string,
-         lastName: req.body.firstName as string,
+         lastName: req.body.lastName as string,
       },
       interesses: (req.body.interesses as string).split(", "),
    };
@@ -31,8 +31,10 @@ export const remove = async (req: Request, res: Response) => {
 export const update = async (req: Request, res: Response) => {
    const id = req.params.id as string;
    let user = await User.findOne({ _id: id });
+   let interessesList: string = user?.interesses.join(", ") as string;
    res.render("pages/update", {
       user,
+      interessesList,
    });
 };
 
@@ -44,9 +46,10 @@ export const updateSave = async (req: Request, res: Response) => {
       userUpdate.email = req.body.email as string;
       userUpdate.name = {
          firstName: req.body.firstName as string,
-         lastName: req.body.firstName as string,
+         lastName: req.body.lastName as string,
       };
       if ((req.body.interesses as string).split(",").length > 0) {
+         userUpdate.interesses = [""];
          let interesses: string[] = (req.body.interesses as string).split(",");
          for (let i in interesses) {
             userUpdate.interesses[i] = interesses[i];
