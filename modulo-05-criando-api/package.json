@@ -1,0 +1,32 @@
+{
+   "name": "modulo-05-criando-api",
+   "version": "1.0.0",
+   "description": "Projeto NodeJS + Typescript + Banco de Dados SQL (MySQL), criando uma api.",
+   "main": "index.js",
+   "node": "18.x",
+   "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start-dev": "nodemon -e json,ts src/app.ts",
+      "tsc": "tsc",
+      "postinstall": "npm run tsc && copyfiles -u 1 src/**/*.mustache dist/",
+      "start": "node dist/app.js"
+   },
+   "author": "Joab T. Alencar <joabtorres1058@gmail.com>",
+   "license": "ISC",
+   "dependencies": {
+      "copyfiles": "^2.4.1",
+      "cors": "^2.8.5",
+      "dotenv": "^16.3.1",
+      "express": "^4.18.2",
+      "mysql2": "^3.4.5",
+      "sequelize": "^6.32.1",
+      "typescript": "^5.1.6"
+   },
+   "devDependencies": {
+      "@types/cors": "^2.8.13",
+      "@types/express": "^4.17.17",
+      "@types/node": "^20.4.0",
+      "@types/sequelize": "^4.28.15",
+      "validator": "^13.9.0"
+   }
+}
