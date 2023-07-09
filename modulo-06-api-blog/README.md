@@ -44,7 +44,7 @@ GET /users/:id - encontrar usuario pelo id
 
 GET /users/search - pesquisa usuario pelo nome
 
-### ROTAS DE NOTICIAS (NEWS)
+#### ROTAS DE NOTICIAS (NEWS)
 
 POST /news/create - criar nova notícia
 
@@ -60,7 +60,7 @@ GET /news/slug/:slug - encontrar notícia pelo slug
 
 GET /news/search - pesquisa notícia pelo nome
 
-### ROTAS DE COMENTÁRIOS (COMMENTS)
+#### ROTAS DE COMENTÁRIOS (COMMENTS)
 
 POST /comments/create/:slug - criar comentário
 
