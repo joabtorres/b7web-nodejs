@@ -1,32 +1,36 @@
-# PROJETO PRÁTICO MODULO 06 - CRIANDO UMA API PARA NOTÍCIAS
+# PROJETO PRÁTICO MODULO 06 - CRIANDO UMA API PARA NOTÍCIAS COM COMENTÁRIOS
 
-Este projeto tem como objetivo colocar em prática tudo o que foi ensinado até o meu presente progresso no curso de nodejs + typescript.
+Este projeto tem como objetivo colocar em prática tudo o que foi aprendido até o meu presente progresso no curso de nodejs + typescript da B7WEb e acessos a documentações.
 
 ## PRE-REQUISITOS
 
--  criar o banco de dados mysql e import os dados do arquivo
+-  Criar o banco de dados mysql e import os dados do arquivo
 
 `nodejsb7web_blog_api.sql`
 
--  Instalar os modulos do projeto
+-  Instalação de bibliotecas globais
+
+`npm install -g typescript nodemon ts-node`
+
+-  Instalação dos modulos do projeto
 
 `npm install`
 
-### Roda o projeto em typscript
+### Comando para funcionar o código em typescript
 
 `npm run start-dev`
 
-### criar build do projeto para javascript
+### Comando para converter o codigo typescript para javascript
 
 `npm run tsc`
 
-### Roda projeto em produção
+### Comando para funcionar o cógido em javascript
 
 `npm run start`
 
-### ROTAS DAS API
+### ROTAS DA API
 
-#### users
+#### ROTAS DO USUÁRIO (USERS)
 
 POST /users/create - criar novo usuario
 
@@ -40,7 +44,7 @@ GET /users/:id - encontrar usuario pelo id
 
 GET /users/search - pesquisa usuario pelo nome
 
-### news
+### ROTAS DE NOTICIAS (NEWS)
 
 POST /news/create - criar nova notícia
 
@@ -50,13 +54,13 @@ DELETE /news/remove/:id - deleta notícia
 
 GET /news/read - ler todas notícia
 
-GET /news/:id - encontrar notícia pelo id
+GET /news/id/:id - encontrar notícia pelo id
 
-GET /news/:slug - encontrar notícia pelo slug
+GET /news/slug/:slug - encontrar notícia pelo slug
 
 GET /news/search - pesquisa notícia pelo nome
 
-### comments
+### ROTAS DE COMENTÁRIOS (COMMENTS)
 
 POST /comments/create/:slug - criar comentário
 
@@ -67,21 +71,29 @@ DELETE /comments/remove/:id - deleta comentário
 ## Estrutura do Banco de Dados
 
 -  users
-   -  id - int
-   -  name - string
-   -  email -string
-   -  password - string
+   -  id - int primary key auto_increment unsigned
+   -  name - varchar (255)
+   -  email -varchar (255)
+   -  password - varchar (255)
 -  news
-   -  id - int
-   -  title - string
-   -  slug: - string UNIQUE
+   -  id - int primary key auto_increment unsigned
+   -  title - varchar (255)
+   -  slug: - varchar (255) UNIQUE
    -  text - text
-   -  author_id - int chave estrangeira do usuário
+   -  author_id - int unsigned foring key users (id)
 -  comments
-   -  id - int
-   -  news_id - int chave estrangeira de noticias
-   -  name - string
-   -  text - string
+   -  id - int primary key auto_increment unsigned
+   -  news_id - int unsigned foring key news(id)
+   -  name - varchar (255)
+   -  text - text
+
+### bibliotecas globais
+
+-  typescript;
+-  nodemon;
+-  ts-node
+
+`npm install -g typescript nodemon ts-node`
 
 ## bibliotecas utilizadas
 
@@ -93,8 +105,9 @@ DELETE /comments/remove/:id - deleta comentário
 -  validator;
 -  dotenv;
 -  path;
+-  slugify;
 
-`npm install typescript cors express sequelize validator dotenv path`
+`npm install typescript cors express sequelize validator dotenv path mysql2 slugify`
 
 ## Types
 
@@ -102,5 +115,6 @@ DELETE /comments/remove/:id - deleta comentário
 -  @types/express;
 -  @types/validator;
 -  @types/cors;
+-  @types/sequelize
 
-`npm install --save-dev @types/node @types/express @types/validator @types/cors`
+`npm install --save-dev @types/node @types/express @types/validator @types/cors @types/sequelize`
