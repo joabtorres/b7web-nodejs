@@ -1,8 +1,0 @@
-modulo 7
-unlink fs/promiis -- remove arquivo
-multer - salvar arquivo
-sharp - tratar imagem
----
-modulo 8 - autenticação
-jsonwebtoken - autenticação
-nodemailer -- para envio de email
